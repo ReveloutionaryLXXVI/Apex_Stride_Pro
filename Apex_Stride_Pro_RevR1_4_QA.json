@@ -1,0 +1,145 @@
+{
+  "revision": "Rev R1.4 GO 1 + GO 2",
+  "body_mass_kg": 66.0,
+  "gravity_m_s2": 9.81,
+  "single_support_static_N": 647.46,
+  "bilateral_per_foot_static_N": 323.73,
+  "sensitivity_multipliers": [
+    1.0,
+    1.5,
+    2.0,
+    3.0
+  ],
+  "single_support_sensitivity_N": {
+    "1.0": 647.46,
+    "1.5": 971.19,
+    "2.0": 1294.92,
+    "3.0": 1942.38
+  },
+  "bladder_area_mm2": 594.0,
+  "residual_chassis_load_at_relief_N": {
+    "1.0": 350.46000000000004,
+    "1.5": 674.19,
+    "2.0": 997.9200000000001,
+    "3.0": 1645.38
+  },
+  "zero_pressure_chassis_load_N": {
+    "1.0": 647.46,
+    "1.5": 971.19,
+    "2.0": 1294.92,
+    "3.0": 1942.38
+  },
+  "bridge_geometry": {
+    "strap_width_mm": 23.0,
+    "strap_thickness_mm": 4.5,
+    "head_recess_diameter_mm": 7.9,
+    "head_recess_depth_mm": 2.2,
+    "residual_cap_mm": 2.3,
+    "cap_net_area_mm2": 34.73,
+    "stagger_x_each_side_mm": 2.0,
+    "head_center_separation_mm": 10.770329614269007,
+    "head_edge_gap_mm": 2.870329614269007,
+    "stack_depth_mm": 9.0
+  },
+  "fastener_stack": {
+    "rear_anchor_underhead_mm": 22.0,
+    "rear_anchor_tip_z_mm": 1.3999999999999986,
+    "toe_anchor_underhead_mm": 16.0,
+    "toe_anchor_tip_z_mm": -0.10000000000000142,
+    "footbed_bottom_z_mm": 0.15,
+    "toe_footbed_gap_mm": 0.25000000000000144,
+    "lock_underhead_mm": 14.0,
+    "lock_tip_z_mm": -6.600000000000001,
+    "lock_nut_pocket_top_z_mm": -8.150000000000002,
+    "lock_tip_projection_mm": 1.5500000000000007,
+    "lock_tip_relief_depth_mm": 1.65,
+    "lock_relief_margin_mm": 0.0999999999999992
+  },
+  "pin_sensitivity": {
+    "rail_support_center_span_mm": 40.6,
+    "shaft_d_mm": 8.0,
+    "groove_root_d_mm": 7.6,
+    "long_unsupported_sensitivity_span_mm": 90.3,
+    "H1150D proof reference MPa": 725,
+    "note": "normal vertical load should not be routed through pin as primary support; unsupported case is a failure sensitivity only."
+  },
+  "qa": {
+    "Csg+coordinate joint checks": 18,
+    "lock-tip/deck CSG": 4,
+    "source/package compile mesh checks": 130,
+    "kinematic positions": 61,
+    "kinematic arithmetic checks": 250,
+    "rail/stop CSG": 6,
+    "fit-kit STL freshly exported": 42,
+    "fresh mass exports": 66,
+    "assembly-map rows": 72,
+    "missing assembly-map paths": 0
+  },
+  "limitations": [
+    "Analytical/nominal geometry screens only; no finite-element analysis or material-specific nonlinear/contact simulation was run.",
+    "No physical prototype load, fatigue, impact, retention, traction, leak, relief-flow or pressure-loss testing was run.",
+    "The actual horizontal adjustment loads, load distribution across rails and bridges, fastener preload and use-specific dynamic loads remain unknown.",
+    "M4×22 rear anchor and M4×14 bridge lock exact supplier/SKU are TBD; actual screw strength/head rating and nut/threads are not procurement-closed.",
+    "Fit-kit STLs are nonwearable mockups."
+  ],
+  "ideal_bladder_pressure_demand_mpa": {
+    "1.0": 1.09,
+    "1.5": 1.635,
+    "2.0": 2.18,
+    "3.0": 3.27
+  },
+  "ideal_bladder_assist_at_relief_N": 297.0,
+  "final_source_sha256": "d7d70f62a0da9de5c4e82a058e46a492a2c1290cfb069e8760a9490d5ce0d457",
+  "verification": {
+    "source_package_compile": {
+      "checks": 130,
+      "pass": 130,
+      "fail": 0,
+      "result": "PASS"
+    },
+    "kinematic_sweep": {
+      "positions": 61,
+      "positions_pass": 61,
+      "arithmetic_checks": 250,
+      "result": "PASS"
+    },
+    "rail_stop_csg": {
+      "checks": 6,
+      "pass": 6,
+      "fail": 0,
+      "result": "PASS"
+    },
+    "bridge_joint_csg_guardrails": {
+      "checks": 18,
+      "csg_checks": 12,
+      "coordinate_guardrails": 6,
+      "pass": 18,
+      "fail": 0
+    },
+    "lock_tip_toe_deck_csg": {
+      "checks": 4,
+      "pass": 4,
+      "fail": 0
+    },
+    "active_mesh_audit": {
+      "count": 72,
+      "welded_watertight_pass": 72,
+      "welded_winding_pass": 72,
+      "finite": 72,
+      "nonpositive": 0,
+      "raw_stl_watertight": 0,
+      "raw_topology_note": "Topology processing welds duplicate STL triangle vertices and checks closure; source STL files are not modified."
+    },
+    "fresh_mass_exports": 66,
+    "assembly_map": {
+      "rows": 72,
+      "missing_paths": 0
+    }
+  },
+  "design_scope_status": {
+    "GO1": "Intended chassis-first, zero-pressure load path and screening load cases documented; physical/load-path confirmation incomplete.",
+    "GO2": "Bridge joint, staggered screw locations and coordinated screw lengths redesigned in actual CAD and pass nominal CSG/geometry checks.",
+    "pin": "Dimensions unchanged; actual lock loads/contact distribution and retention qualification remain open for GO3.",
+    "wear_release": "NOT RELEASED"
+  }
+}
