@@ -1,0 +1,193 @@
+{
+  "revision": "Rev R1.5 GO 3 + GO 4",
+  "status": "DIGITAL_GEOMETRY_REGRESSION_PASS; STRUCTURAL_QUALIFICATION_OPEN",
+  "source_sha256": "43a706db3ba6ce2e7d012914409b26862a64dc2da722e90b0a0b8b0ed63f7a5c",
+  "source_printprep_standalone_byte_identical": true,
+  "standard_fitkit_fresh_exports": {
+    "revision": "Rev R1.5 GO3+GO4",
+    "source": "revision/Apex_Stride_Pro_RevR.scad",
+    "fit_kit_export_count": 42,
+    "passed": 42,
+    "failed": 0,
+    "seconds": 16.68,
+    "source_sha256": "43a706db3ba6ce2e7d012914409b26862a64dc2da722e90b0a0b8b0ed63f7a5c",
+    "changed_design": "standard outsole relief 2.2 -> 1.5 mm; standard 4.0 mm nominal tread skin 1.8 -> 2.5 mm; optional 3.2 mm study remains 1.8 mm skin",
+    "notes": [
+      "All fit-kit STLs are non-wearable dimensional samples.",
+      "Each mesh is freshly exported, oriented and translated only; no scaling.",
+      "CAD exports normalized to Z-min=0 and XY-centered; 220x220mm envelope checked."
+    ]
+  },
+  "optional_outsole_fresh_exports": {
+    "revision": "Rev R1.5 GO3+GO4",
+    "count": 9,
+    "passed": 9,
+    "failed": 0,
+    "skin_mm": 1.8,
+    "status": "EXPERIMENTAL; NOT APPROVED FOR WEAR",
+    "seconds": 1.32
+  },
+  "all_72_mesh_audit": {
+    "revision": "Rev R1.5 GO3/GO4",
+    "method": "Fresh read of 72 current active STLs from the R1.5 package: 42 primary fit-kit, 21 upper concept, 9 optional outsole study. Raw triangle facets are checked for finiteness; duplicate vertices are welded and duplicate/degenerate faces removed only in in-memory audit copy; source STL bytes are not modified by audit.",
+    "mesh_count": 72,
+    "raw_finite_pass": 72,
+    "raw_watertight": 0,
+    "welded_watertight_pass": 72,
+    "welded_winding_pass": 72,
+    "welded_finite_pass": 72,
+    "positive_volume_or_area_pass": 72,
+    "zero_degenerate_faces": 72,
+    "non_watertight_after_weld": [],
+    "inconsistent_winding_after_weld": [],
+    "nonfinite": [],
+    "nonpositive": [],
+    "limitations": [
+      "Topology processing is a software interpretation of STL facets; the source STL bytes are not rewritten by this audit. Manufacturing mesh acceptance and slicer/toolpath checks remain separate.",
+      "Watertightness and non-zero mesh volume do not establish part strength, tolerance fit or wear safety."
+    ],
+    "source_sha256": "43a706db3ba6ce2e7d012914409b26862a64dc2da722e90b0a0b8b0ed63f7a5c",
+    "counts": {
+      "primary_fit_kit": 42,
+      "upper_concept": 21,
+      "optional_outsole_study": 9
+    },
+    "note": "Audit rerun after fresh exports of all 42 standard fit-kit parts and all 9 optional study outsole parts. Source changed after original 42/9 export only by comments clarifying that pneumatic relief/regulator-family numeric limits are unverified planning assumptions; no CAD geometry changed."
+  },
+  "structural_screen": {
+    "revision": "Rev R1.5 GO 3 + GO 4",
+    "source_sha256": "43a706db3ba6ce2e7d012914409b26862a64dc2da722e90b0a0b8b0ed63f7a5c",
+    "body_mass_kg": 66.0,
+    "g_m_s2": 9.81,
+    "single_support_static_N": 647.46,
+    "bilateral_static_N_per_foot": 323.73,
+    "multipliers": [
+      1.0,
+      1.5,
+      2.0,
+      3.0
+    ],
+    "single_support_loads_N": {
+      "1.0": 647.46,
+      "1.5": 971.19,
+      "2.0": 1294.92,
+      "3.0": 1942.38
+    },
+    "bladder_area_mm2": 594.0,
+    "bladder_pressure_demand_MPa": {
+      "1.0": 1.09,
+      "1.5": 1.635,
+      "2.0": 2.18,
+      "3.0": 3.27
+    },
+    "ideal_assist_at_working_target_N": 237.60000000000002,
+    "ideal_assist_at_relief_target_N": 297.0,
+    "zero_pressure_chassis_load_N": {
+      "1.0": 647.46,
+      "1.5": 971.19,
+      "2.0": 1294.92,
+      "3.0": 1942.38
+    },
+    "residual_chassis_load_at_relief_N": {
+      "1.0": 350.46000000000004,
+      "1.5": 674.19,
+      "2.0": 997.9200000000001,
+      "3.0": 1645.38
+    },
+    "pneumatic_candidate_limits_MPa": {
+      "fitting": 1.0,
+      "tube": 1.5,
+      "relief_family_max_set": 0.8,
+      "regulator_family_max_output": 0.85
+    },
+    "bridge_geometry_mm": {
+      "strap_width": 23.0,
+      "strap_thickness": 4.5,
+      "head_recess_diameter": 7.9,
+      "head_recess_depth": 2.2,
+      "cap": 2.3,
+      "net_cap_area_mm2": 34.73,
+      "stagger_x": 2.0,
+      "hole_y": 5.0,
+      "head_edge_gap": 2.870329614269007,
+      "stack": 9.0
+    },
+    "pin_sensitivity": {
+      "support_center_span_mm": 40.6,
+      "shaft_d_mm": 8.0,
+      "groove_root_d_mm": 7.6,
+      "fault_span_mm": 90.3,
+      "stress_supported_at_3x_MPa": 392.22058629784783,
+      "stress_unsupported_at_3x_MPa": 1017.4692326200637,
+      "reference_proof_MPa": 725,
+      "status": "Not qualified; normal axial lock force and fault load path are unknown. Severe unsupported span exceeds the candidate proof-strength reference."
+    },
+    "outsole": {
+      "standard_external_thickness_mm": 4.0,
+      "standard_relief_depth_mm": 1.5,
+      "standard_skin_mm": 2.5,
+      "optional_study_external_thickness_mm": 3.2,
+      "optional_study_relief_depth_mm": 1.4,
+      "optional_study_skin_mm": 1.8000000000000003
+    },
+    "geometry_guardrails_pass": 13,
+    "geometry_guardrails_count": 15,
+    "unverified_guardrails": [
+      "relief-family setpoint capability",
+      "regulator-family output capability"
+    ],
+    "failed_guardrails": [],
+    "rows": 79,
+    "limitations": [
+      "Analytical screens only: no finite-element analysis, nonlinear contact solution or structural certification was run.",
+      "Materialise PA12 values are published nominal values; exact material/process/build orientation and conditioned properties not certified.",
+      "Pressure area/load share, relief-flow capacity, pressure overshoot and pressure-loss transient remain unknown.",
+      "Pin axial load, rail load sharing, impact/fatigue, bearing distribution, fastener grade and preload remain unknown.",
+      "No physical load/fatigue/retention/traction/abrasion/adhesion tests."
+    ]
+  },
+  "regressions": {
+    "source_package_suite": {
+      "checks": 130,
+      "passed": 130,
+      "source_hash_at_run": "9fd186a2514c6714b00a67c815d6ec171ab61561697fd76ec90a063f0999049e",
+      "status": "PASS on R1.5 geometry before comment-only clarification of pneumatic family rating assumptions; repeat attempt after comments timed out; final exact source separately compiled/exported via 42+9 fresh exports."
+    },
+    "cavity": {
+      "checks": 9,
+      "status": "PASS on geometry-identical R1.5 source"
+    },
+    "kinematic": {
+      "positions": 61,
+      "arithmetic_checks": 250,
+      "status": "PASS on geometry-identical R1.5 source"
+    },
+    "rail_stop_csg": {
+      "checks": 6,
+      "status": "PASS in R1.5 geometry test; repeat attempt subsequently timed out; comments-only later edit does not affect geometry."
+    },
+    "bridge_fastener_csg": {
+      "checks": 18,
+      "status": "PASS on R1.5 geometry"
+    },
+    "lock_tip_csg": {
+      "checks": 4,
+      "status": "PASS on R1.5 geometry"
+    },
+    "fitkit_mesh_exports": {
+      "checks": 42,
+      "status": "FRESH PASS on exact final source hash"
+    },
+    "optional_mesh_exports": {
+      "checks": 9,
+      "status": "FRESH PASS on exact final source hash"
+    }
+  },
+  "known_open_gates": [
+    "Material-specific FEA was not run; solver unavailable.",
+    "Physical proof/static load, impact, fatigue, pin/retaining-ring retention, pneumatic burst/relief-flow/overshoot/pressure-loss and traction/bond/tear/abrasion tests not run.",
+    "Exact M4x22 rear anchor and M4x14 lock screw SKUs remain unsourced.",
+    "AP20-D relief setting/flow and ARX20 exact regulated-output option unverified; numeric model values are assumptions only.",
+    "Fit-kit STL meshes remain nonwearable prototypes, not structural part releases."
+  ]
+}

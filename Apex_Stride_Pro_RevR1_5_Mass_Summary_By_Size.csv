@@ -1,0 +1,4 @@
+size,outsole_aggregate_volume_mm3,outsole_density_placeholder_g_cm3,outsole_mass_estimate_g,modeled_chassis_plus_pin_g,modeled_lower_platform_g,geometry_validated,includes_note
+EU42,79172.629349,1.2,95.007155,504.199087,599.206242,True,"Excludes footbed, actual retaining ring, production fasteners, upper, spring, pneumatic system, adhesives; material densities are assumptions."
+EU44,82631.1549,1.2,99.157386,504.199093,603.356479,True,"Excludes footbed, actual retaining ring, production fasteners, upper, spring, pneumatic system, adhesives; material densities are assumptions."
+EU46,86089.626206,1.2,103.307551,504.199083,607.506634,True,"Excludes footbed, actual retaining ring, production fasteners, upper, spring, pneumatic system, adhesives; material densities are assumptions."
