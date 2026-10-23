@@ -1,0 +1,25 @@
+size,component,selector,volume_mm3,extents_mm,density_g_cm3,estimated_mass_g,basis,mesh_result
+EU42,heel_deck,heel,116879.7651,122.000x72.000x20.600,0.95,111.0358,PA12 SLS candidate density from Materialise card,PASS
+EU42,toe_carriage,toe,218818.2578,172.000x98.000x20.600,0.95,207.8773,PA12 SLS candidate density from Materialise card,PASS
+EU42,bridge_rear,bridge_rear,7996.455,130.000x23.000x3.000,2.7,21.5904,6061-T6 density assumption; material not procured,PASS
+EU42,bridge_front,bridge_front,5513.5889,85.000x23.000x3.000,2.7,14.8867,6061-T6 density assumption; material not procured,PASS
+EU42,rail_left,rail_left,18763.9962,155.000x13.500x16.100,2.7,50.6628,6061-T6 density assumption; material not procured,PASS
+EU42,rail_right,rail_right,18763.9962,155.000x13.500x16.100,2.7,50.6628,6061-T6 density assumption; material not procured,PASS
+EU42,locking_pin,pin_through_solid,4699.2047,12.000x90.300x12.000,7.75,36.4188,17-4PH candidate density; exact part/condition not procured,PASS
+EU42,outsole_assembly,outsole_assembly,75750.256,294.000x98.000x4.000,1.2,90.9003,placeholder rubber density; compound not selected,PASS
+EU44,heel_deck,heel,116879.7651,122.000x72.000x20.600,0.95,111.0358,PA12 SLS candidate density from Materialise card,PASS
+EU44,toe_carriage,toe,218818.2625,172.000x98.000x20.600,0.95,207.8773,PA12 SLS candidate density from Materialise card,PASS
+EU44,bridge_rear,bridge_rear,7996.455,130.000x23.000x3.000,2.7,21.5904,6061-T6 density assumption; material not procured,PASS
+EU44,bridge_front,bridge_front,5513.5889,85.000x23.000x3.000,2.7,14.8867,6061-T6 density assumption; material not procured,PASS
+EU44,rail_left,rail_left,18763.9962,155.000x13.500x16.100,2.7,50.6628,6061-T6 density assumption; material not procured,PASS
+EU44,rail_right,rail_right,18763.9962,155.000x13.500x16.100,2.7,50.6628,6061-T6 density assumption; material not procured,PASS
+EU44,locking_pin,pin_through_solid,4699.205,12.000x90.300x12.000,7.75,36.4188,17-4PH candidate density; exact part/condition not procured,PASS
+EU44,outsole_assembly,outsole_assembly,78987.5802,307.333x98.000x4.000,1.2,94.7851,placeholder rubber density; compound not selected,PASS
+EU46,heel_deck,heel,116879.7651,122.000x72.000x20.600,0.95,111.0358,PA12 SLS candidate density from Materialise card,PASS
+EU46,toe_carriage,toe,218818.2526,172.000x98.000x20.600,0.95,207.8773,PA12 SLS candidate density from Materialise card,PASS
+EU46,bridge_rear,bridge_rear,7996.455,130.000x23.000x3.000,2.7,21.5904,6061-T6 density assumption; material not procured,PASS
+EU46,bridge_front,bridge_front,5513.589,85.000x23.000x3.000,2.7,14.8867,6061-T6 density assumption; material not procured,PASS
+EU46,rail_left,rail_left,18763.9962,155.000x13.500x16.100,2.7,50.6628,6061-T6 density assumption; material not procured,PASS
+EU46,rail_right,rail_right,18763.9962,155.000x13.500x16.100,2.7,50.6628,6061-T6 density assumption; material not procured,PASS
+EU46,locking_pin,pin_through_solid,4699.2049,12.000x90.300x12.000,7.75,36.4188,17-4PH candidate density; exact part/condition not procured,PASS
+EU46,outsole_assembly,outsole_assembly,82224.8502,320.667x98.000x4.000,1.2,98.6698,placeholder rubber density; compound not selected,PASS

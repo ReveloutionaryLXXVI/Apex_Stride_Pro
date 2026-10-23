@@ -1,0 +1,226 @@
+{
+  "revision": "Rev R1.2 fresh validation / M4, pressure-area and local roof corrections",
+  "date": "2026-10-16",
+  "authoritative_cad": "revision/Apex_Stride_Pro_RevR.scad",
+  "authoritative_cad_sha256": "305f5dd75992d3b680885d64c8b7a4d754ed39ddc4296fb962d43e794fdcd316",
+  "fresh_run_exit_codes": {
+    "cavity": 0,
+    "kinematic": 0,
+    "csg": 0,
+    "fitkit": 0,
+    "mass": 0,
+    "sourcecheck": 0,
+    "load_screen": 0,
+    "interface_csg": 0,
+    "railstop": 0,
+    "openscad_compile": 0,
+    "mesh_geometry_match": 0,
+    "package_integrity": 0
+  },
+  "all_fresh_checks_exit_zero": true,
+  "source_package_checks": {
+    "checks": 130,
+    "pass": 130,
+    "fail": 0,
+    "result": "PASS",
+    "revision": "Rev R1.2 component-specification closure / corrected CAD"
+  },
+  "cavity_checks": {
+    "row_count": 9,
+    "result": "PASS"
+  },
+  "kinematic_sweep": {
+    "positions": 61,
+    "checks": 250,
+    "position_rows_pass": 61,
+    "position_rows_fail": 0,
+    "result": "PASS"
+  },
+  "rail_stop_csg": {
+    "checks": 6,
+    "pass": 6,
+    "fail": 0,
+    "result": "PASS",
+    "R1_2_status": "freshly rerun against the corrected Rev R1.2 source during live audit; 6/6 PASS"
+  },
+  "toe_anchor_interface_csg": {
+    "checks": 24,
+    "pass": 24,
+    "fail": 0,
+    "result": "PASS",
+    "R1_2_status": "freshly rerun against the corrected Rev R1.2 source during live audit; 24/24 PASS"
+  },
+  "fitkit_mesh_exports": {
+    "rows": 42,
+    "pass": 42,
+    "fail": 0,
+    "R1_2_status": "42 indexed fit-kit meshes validated; three heel-deck meshes were freshly exported and compared against the packaged Rev R meshes with maximum nearest-vertex delta <0.0001 mm after print-prep transform"
+  },
+  "modeled_mass_basis_entries": 66,
+  "fresh_roof_heel_deck_mesh_exports": 3,
+  "assembly_map_rows": 72,
+  "missing_assembly_map_paths": [],
+  "mass_by_size": [
+    {
+      "size": "EU42",
+      "RevK_chassis_pin_mass_g": "475.617876",
+      "RevR_chassis_pin_mass_g": "484.952590",
+      "RevR_delta_chassis_pin_g": "+9.334714",
+      "RevK_full_modeled_platform_g_outsole_1p20": "566.254182",
+      "RevR_full_modeled_platform_g_outsole_1p20": "575.852897",
+      "RevR_delta_platform_g": "+9.598715",
+      "excludes": "footbed mass (EVA density TBD), retaining ring actual mass, production fasteners, upper, spring, pneumatic bladder/tubing/fittings/regulator, adhesive; outsole mass uses placeholder density 1.20 g/cm3; R1.2 roof revision: 3 heel deck meshes freshly re-exported; all other component geometry unchanged."
+    },
+    {
+      "size": "EU44",
+      "RevK_chassis_pin_mass_g": "475.617881",
+      "RevR_chassis_pin_mass_g": "484.952596",
+      "RevR_delta_chassis_pin_g": "+9.334715",
+      "RevK_full_modeled_platform_g_outsole_1p20": "570.103776",
+      "RevR_full_modeled_platform_g_outsole_1p20": "579.737692",
+      "RevR_delta_platform_g": "+9.633916",
+      "excludes": "footbed mass (EVA density TBD), retaining ring actual mass, production fasteners, upper, spring, pneumatic bladder/tubing/fittings/regulator, adhesive; outsole mass uses placeholder density 1.20 g/cm3; R1.2 roof revision: 3 heel deck meshes freshly re-exported; all other component geometry unchanged."
+    },
+    {
+      "size": "EU46",
+      "RevK_chassis_pin_mass_g": "475.617873",
+      "RevR_chassis_pin_mass_g": "484.952587",
+      "RevR_delta_chassis_pin_g": "+9.334714",
+      "RevK_full_modeled_platform_g_outsole_1p20": "573.953292",
+      "RevR_full_modeled_platform_g_outsole_1p20": "583.622407",
+      "RevR_delta_platform_g": "+9.669115",
+      "excludes": "footbed mass (EVA density TBD), retaining ring actual mass, production fasteners, upper, spring, pneumatic bladder/tubing/fittings/regulator, adhesive; outsole mass uses placeholder density 1.20 g/cm3; R1.2 roof revision: 3 heel deck meshes freshly re-exported; all other component geometry unchanged."
+    }
+  ],
+  "independent_load_screen": {
+    "revision": "Rev R1.2 corrected pressure screen and reinforced heel-core roof",
+    "body_mass_kg": 66.0,
+    "gravity_m_s2": 9.81,
+    "body_force_N": 647.46,
+    "equal_bilateral_static_force_per_foot_N": 323.73,
+    "load_case": "Conservative single-support sensitivity: entire 66 kg gravitational load assigned to one shoe; multipliers are analyst-selected sensitivities, not measured gait loads.",
+    "projected_cavity_area_mm2": 1265.0,
+    "target_bladder_body_dimensions_mm": {
+      "length": 27.0,
+      "width": 22.0,
+      "height": 9.0
+    },
+    "target_bladder_projected_area_mm2": 594.0,
+    "pressure_demand_if_bladder_alone_1x_MPa": 1.09,
+    "pressure_demand_if_bladder_alone_1p5x_MPa": 1.635,
+    "pressure_demand_if_bladder_alone_2x_MPa": 2.18,
+    "pressure_demand_if_bladder_alone_3x_MPa": 3.27,
+    "provisional_working_pressure_target_MPa": 0.4,
+    "provisional_relief_setpoint_target_MPa": 0.5,
+    "nominal_bladder_force_at_working_target_N": 237.60000000000002,
+    "nominal_bladder_force_at_relief_setpoint_N": 297.0,
+    "required_structural_support_at_relief_setpoint_N": {
+      "1x": 350.46000000000004,
+      "1.5x": 674.19,
+      "2x": 997.9200000000001,
+      "3x": 1645.38
+    },
+    "required_structural_share_at_relief_setpoint_percent": {
+      "1x": 54.12844036697248,
+      "1.5x": 69.41896024464832,
+      "2x": 77.06422018348623,
+      "3x": 84.70948012232415
+    },
+    "nominal_relief_to_fitting_pressure_margin_MPa": 0.5,
+    "candidate_ratings_MPa": {
+      "working_target": 0.4,
+      "relief_setpoint_target": 0.5,
+      "AP20_D_max_setpoint": 0.8,
+      "ARX20_max_output": 0.85,
+      "KQ2_max_working": 1.0,
+      "T0425_max_working_at_20C": 1.5
+    },
+    "nominal_roof_thickness_mm": 10.1,
+    "pin_groove_root_diameter_mm": 7.6,
+    "rail_centerline_spacing_mm": 40.6,
+    "whole_pin_span_sensitivity_mm": 90.3,
+    "roof_strip_formula": "sigma = 3*F*L/(2*b*h^2), L=23 mm, h=10.1 mm revised heel-core roof, b=20/30/40/60 mm assumed",
+    "pin_formula": "sigma = 32*(F*span/4)/(pi*d^3), d=7.6 mm, span=40.6 and 90.3 mm sensitivity only",
+    "pa12_flexural_reference_MPa": 41.0,
+    "candidate_pin_proof_reference_MPa": 725.0,
+    "printprep_source_parity": true,
+    "fea_solver_executables_found": {},
+    "fea_solver_executables_checked": [
+      "ccx",
+      "calculix",
+      "gmsh",
+      "FreeCAD",
+      "freecad",
+      "abaqus",
+      "code_aster"
+    ],
+    "python_fea_modules_found": [],
+    "result": "PASS_CORRECTED_ARITHMETIC_AND_NOMINAL_PRESSURE_HIERARCHY_ONLY",
+    "limitations": [
+      "The old pressure screen incorrectly used the full 55 x 23 mm cavity area as bladder area; this correction uses the specified 27 x 22 mm target bladder body footprint (594 mm2). Actual pressure-effective area may be smaller.",
+      "The 0.40 MPa working / 0.50 MPa nominal relief settings are provisional design targets only. They are not approved until the finished bladder has an OEM-declared working/burst/cycle rating, the AP20-D flow/overshoot is checked, and measured chamber pressure transients stay below all component ratings.",
+      "At the provisional 0.50 MPa relief target, nominal bladder support is only 297 N at the assumed full projected area. The chassis/structural load path must safely carry the residual and must withstand the full load with the bladder depressurized; this is not demonstrated by the current strip screen.",
+      "The Lee Spring candidate is a 20.5\u201330.8 N return spring at an assumed 4\u20136 mm compression and is not a body-load spring.",
+      "No finite-element solver/workflow was available or run. Roof-strip and pin-beam analyses are analyst-defined sensitivity models, not validated stress/load-path analyses or design allowables.",
+      "Candidate material reference values do not account for manufacturing direction, notches, contact, fatigue or impact. No physical tests or human wear tests were performed."
+    ],
+    "live_formula_recheck": {
+      "rows": 36,
+      "mismatches": 0,
+      "result": "PASS"
+    }
+  },
+  "structural_fea": "NOT RUN; no compatible FEA solver/workflow found or run in this environment",
+  "physical_tests": "NOT RUN",
+  "wear_release": "NOT CLEARED",
+  "disposition": "digital geometry/interface checks pass only; not structurally qualified or wearable",
+  "live_audit": {
+    "date": "2026-10-16",
+    "source_compile": [
+      "EU42",
+      "EU44",
+      "EU46"
+    ],
+    "source_compile_result": "PASS",
+    "source_package_checks": {
+      "checks": 130,
+      "pass": 130,
+      "fail": 0
+    },
+    "cavity_checks": {
+      "checks": 9,
+      "pass": 9,
+      "fail": 0
+    },
+    "kinematic_sweep": {
+      "positions": 61,
+      "checks": 250,
+      "position_rows_pass": 61,
+      "position_rows_fail": 0
+    },
+    "rail_stop_csg": {
+      "checks": 6,
+      "pass": 6,
+      "fail": 0
+    },
+    "toe_anchor_interface_csg": {
+      "checks": 24,
+      "pass": 24,
+      "fail": 0
+    },
+    "heel_mesh_comparison": {
+      "sizes": 3,
+      "pass": 3,
+      "max_nearest_vertex_delta_mm": 6.086365653407142e-05
+    },
+    "load_formula_rows": {
+      "rows": 36,
+      "fail": 0
+    },
+    "notes": [
+      "The 42 existing fit-kit meshes were not all re-exported; only the three revised heel-deck meshes were fresh exports in this audit.",
+      "No FEA or physical load/pressure/fatigue/traction tests were run.",
+      "Wear remains NOT CLEARED."
+    ]
+  }
+}
