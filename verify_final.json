@@ -1,0 +1,105 @@
+{
+ "body": {
+  "path": "r24/body_R24_v4.stl",
+  "volume_mm3": 368110.7,
+  "mass_g": 441.7,
+  "watertight": true,
+  "winding_ok": true,
+  "components": 24,
+  "comp_vols_top": [
+   373789.6,
+   5524.5,
+   98.5,
+   22.1,
+   6.3,
+   4.5,
+   2.9,
+   2.6
+  ],
+  "bbox": [
+   [
+    -154.07,
+    -52.81,
+    -0.0
+   ],
+   [
+    167.03,
+    52.81,
+    57.1
+   ]
+  ]
+ },
+ "S1_ruler": {
+  "cutter_mm3": 275.6,
+  "cut_mm3": 0.0
+ },
+ "S1_speedlines": {
+  "cutter_mm3": 391.4,
+  "cut_mm3": 28.279
+ },
+ "S1_turbine": {
+  "cutter_mm3": 247.2,
+  "cut_mm3": 0.0
+ },
+ "rings": {
+  "cutter_mm3": 188.7,
+  "cut_mm3": 0.001
+ },
+ "grooves": {
+  "cutter_mm3": 27808.0,
+  "cut_mm3": 0.0
+ },
+ "S3_groove_x_footcavity_mm3": 0.0,
+ "groove_web": {
+  "72": {
+   "footbed_z": 7.25,
+   "hits": [
+    46.63,
+    46.17,
+    11.11,
+    1.2
+   ]
+  },
+  "94": {
+   "footbed_z": 7.44,
+   "hits": [
+    42.9,
+    42.44,
+    10.13,
+    8.48
+   ]
+  },
+  "114": {
+   "footbed_z": 8.53,
+   "hits": [
+    41.71,
+    38.15,
+    37.97,
+    37.48,
+    9.25,
+    7.63
+   ]
+  },
+  "128": {
+   "footbed_z": 9.34,
+   "hits": [
+    33.63,
+    9.34,
+    7.7
+   ]
+  }
+ },
+ "thickness": {
+  "min": 0.05,
+  "p5": 0.49,
+  "median": 1.8,
+  "frac_lt_1p6": 0.329
+ },
+ "S6_export": {
+  "path": "r24/Apex_Stride_Pro_RevR2_4_L.stl",
+  "volume_mm3": 301016.5,
+  "mass_g": 361.2,
+  "components": 33,
+  "delta_vs_body_mm3": -67094.276
+ }
+}

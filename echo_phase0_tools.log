@@ -1,0 +1,46 @@
+=== TOOL VERSIONS 2026-10-24T20:01:30+08:00 ===
+openscad      : NOT FOUND
+admesh        : NOT FOUND
+ccx           : NOT FOUND
+CalculiX      : NOT FOUND
+FEBio         : NOT FOUND
+febio         : NOT FOUND
+prusa-slicer  : NOT FOUND
+slic3r        : NOT FOUND
+CuraEngine    : NOT FOUND
+python3       : Python 3.12.3
+--- python packages ---
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'trimesh'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'scipy'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'matplotlib'
+--- fonts ---
+/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf: Liberation Sans:style=Regular
+/usr/share/fonts/truetype/liberation/LiberationMono-BoldItalic.ttf: Liberation Mono:style=Bold Italic
+/usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf: Liberation Serif:style=Italic
+/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf: Liberation Mono:style=Bold
+/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf: Liberation Serif:style=Bold
+/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf: Liberation Mono:style=Regular
+/usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf: Liberation Sans:style=Italic
+/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf: Liberation Serif:style=Bold Italic
+=== install attempt 2026-10-24T20:01:47+08:00 ===
+uid=1001(work) gid=1001(work) groups=1001(work)
+--- apt ---
+no sudo
+apt 2.8.3 (amd64)
+--- pip trimesh ---
+py OK 5.2.0 2.5.1 1.18.1
+--- openscad apt ---
+/usr/bin/sh: 1: sudo: not found
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+=== openscad portable 2026-10-24T20:03:29+08:00 ===
+trying https://files.openscad.org/OpenSCAD-2021.01-x86_64.AppImage
+-rw-r--r-- 1 work work 40759336 Oct 24 20:03 sc.AppImage
+extracted
+OpenSCAD version 2021.01

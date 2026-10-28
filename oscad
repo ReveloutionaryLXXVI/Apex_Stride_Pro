@@ -1,0 +1,2 @@
+#!/bin/bash
+exec /home/work/.openclaw/workspace/apex_stride_r24/tools/squashfs-root/usr/bin/openscad "$@"

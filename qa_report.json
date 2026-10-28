@@ -1,0 +1,130 @@
+{
+ "body_volume_mm3": 443322.8,
+ "body_area_mm2": 163679.3,
+ "body_watertight": true,
+ "body_winding_ok": true,
+ "body_components": 15,
+ "body_comp_volumes_mm3": [
+  443300.8,
+  44.7,
+  8.4,
+  2.6,
+  2.6,
+  2.6,
+  2.6,
+  2.6
+ ],
+ "body_bbox": [
+  [
+   -152.97,
+   -45.5,
+   0.0
+  ],
+  [
+   172.95,
+   45.5,
+   54.05
+  ]
+ ],
+ "body_mass_g_rho120": 532.0,
+ "export_volume_mm3": 443322.8,
+ "export_watertight": true,
+ "export_components": 15,
+ "S6_export_vs_body_delta_mm3": 0.0,
+ "S6_export_vs_body_delta_pct": 0.0,
+ "export_mass_g_rho120": 532.0,
+ "export_bbox": [
+  [
+   -152.97,
+   -45.5,
+   0.0
+  ],
+  [
+   172.95,
+   45.5,
+   54.05
+  ]
+ ],
+ "S1_ruler_cutter_volume_mm3": 979.7,
+ "S1_ruler_cut_volume_mm3": 0.0,
+ "S1_ruler_cut_bbox": null,
+ "S1_speedlines_cutter_volume_mm3": 10454.2,
+ "S1_speedlines_cut_volume_mm3": 0.004,
+ "S1_speedlines_cut_bbox": [
+  [
+   -103.62,
+   -30.0,
+   34.86
+  ],
+  [
+   84.29,
+   30.0,
+   43.88
+  ]
+ ],
+ "S1_turbine_cutter_volume_mm3": 4752.1,
+ "S1_turbine_cut_volume_mm3": 0.034,
+ "S1_turbine_cut_bbox": [
+  [
+   -142.29,
+   -33.86,
+   4.38
+  ],
+  [
+   -122.74,
+   33.86,
+   27.62
+  ]
+ ],
+ "S2_text_asplaced_cutter_volume_mm3": 461.3,
+ "S2_text_asplaced_cut_volume_mm3": 0.0,
+ "S2_text_asplaced_cut_bbox": null,
+ "S2_text_oracle_volume_mm3": 77.0,
+ "S2_font_renders": true,
+ "S3_groove_x_footnegative_mm3": 2440.058,
+ "S3_footbed_z_at_grooves_mm": {
+  "72": 7.25,
+  "94": 7.35,
+  "114": 8.27,
+  "128": 8.91
+ },
+ "S5_channel_x_gills_mm3": 0.0,
+ "S5_channel_below_z0_mm3": 5574.1,
+ "S5_channel_bbox": [
+  [
+   -89.5,
+   -15.0,
+   -5.0
+  ],
+  [
+   89.5,
+   15.0,
+   31.0
+  ]
+ ],
+ "S5_gills_bbox": [
+  [
+   -90.98,
+   -51.0,
+   14.08
+  ],
+  [
+   90.98,
+   51.0,
+   25.92
+  ]
+ ],
+ "rings_cutter_volume_mm3": 1708.5,
+ "rings_sample_fraction_outside_body": 0.988,
+ "rings_cut_volume_mm3": 0.0,
+ "thickness_samples": 5993,
+ "thickness_min_mm": 0.059,
+ "thickness_p1_mm": 0.412,
+ "thickness_p5_mm": 0.447,
+ "thickness_median_mm": 6.639,
+ "thickness_frac_below_1p6": 0.2735,
+ "thickness_frac_below_1p8": 0.284,
+ "overhang_area_mm2_gt45": 43554.8,
+ "overhang_frac_of_surface": 0.2661,
+ "flat_down_area_mm2": 26062.5
+}

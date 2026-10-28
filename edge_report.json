@@ -1,0 +1,18 @@
+{
+ "collar_rim (z>36, x<20)": {
+  "sharp_convex_edges": 442,
+  "dihedral_min_deg": 22.0,
+  "dihedral_median_deg": 80.8,
+  "note": "dihedral = interior angle between facets; <150 deg = sharp edge, radius unproven"
+ },
+ "gill_side_rim (|y|>40)": {
+  "sharp_convex_edges": 1691,
+  "dihedral_min_deg": 16.8,
+  "dihedral_median_deg": 90.0,
+  "note": "dihedral = interior angle between facets; <150 deg = sharp edge, radius unproven"
+ },
+ "pull_tab (x<-140, z>30)": {
+  "sharp_convex_edges": 0,
+  "note": "no sharp convex edge facets found in zone"
+ }
+}

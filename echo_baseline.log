@@ -1,0 +1,23 @@
+=== BASELINE 2026-10-24T21:28:40+08:00 ===
+ECHO: "APEX STRIDE PRO R2.3 COMFORT | TPU95A | rider 66 kg (12 y/o custom) | EU42->44 | rocker COMFORT (18/14 deg)"
+ECHO: "COMFORT  conformal liner 1 mm | 3-ring softstep heel | rounded edges | dimples | pull tab"
+ECHO: "FIT  toe room net liner 42/43/44 = 22/16/9 mm | ruler @ 132/140/148"
+ECHO: "BOW  13->17 mm | travel 8 mm | peak 1295 N | returned 4.9 J/step"
+ECHO: "MASS  963 g -> 410 g   (saved 553 g)"
+ECHO: "METABOLIC GAIN ~9.3 % | SPEED  12.0 -> 13.1 | 15.0 -> 16.4 | 17.1 -> 18.7 km/h"
+ECHO: "GATES  walls PASS | liner fit PASS | mass PASS | bow/rider PASS | rocker PASS"
+ECHO: "WEAR STATUS  DIGITAL CANDIDATE — physical tests OPEN. See protocol below."
+Geometries in cache: 2407
+Geometry cache size in bytes: 14596224
+CGAL Polyhedrons in cache: 13
+CGAL cache size in bytes: 103356360
+Total rendering time: 0:06:09.208
+   Top level object is a 3D object:
+   Simple:        yes
+   Vertices:    11249
+   Halfedges:   43244
+   Edges:       21622
+   Halffacets:  20764
+   Facets:      10382
+   Volumes:        16
+EXIT=0 2026-10-24T21:34:50+08:00

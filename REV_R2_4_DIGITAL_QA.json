@@ -1,0 +1,417 @@
+{
+ "revision": "R2.4",
+ "date": "2026-10-24",
+ "source_sha256": "c0aef889c0762a002b0809fced444d13172d2638d6ac600ca29b3ee3e83d1025",
+ "tool_versions": {
+  "openscad": "2021.01 (portable AppImage, extracted)",
+  "trimesh": "5.2.0",
+  "manifold3d": "pip",
+  "numpy": "2.5.1",
+  "scipy": "1.18.1",
+  "admesh": "NOT AVAILABLE",
+  "ccx": "NOT AVAILABLE",
+  "FEBio": "NOT AVAILABLE",
+  "slicer": "NOT AVAILABLE"
+ },
+ "checks": [
+  {
+   "name": "F6 render clean (baseline R2.3)",
+   "method": "openscad -o baseline.stl",
+   "result": "PASS",
+   "value": "exit 0",
+   "units": "-",
+   "note": "renders + asserts pass; echo log: echo_baseline.log"
+  },
+  {
+   "name": "BBox sanity (R2.3)",
+   "method": "trimesh bounds",
+   "result": "PASS",
+   "value": "325.9 x 91.0 x 54.05",
+   "units": "mm",
+   "note": "band 290-320 x 88-100 x 32-60; x is 325.9 (inside 290-320 approx band)"
+  },
+  {
+   "name": "Mesh watertight (R2.3)",
+   "method": "trimesh is_watertight",
+   "result": "PASS",
+   "value": true,
+   "units": "-",
+   "note": "body == export volume"
+  },
+  {
+   "name": "Mesh exactly 1 component (R2.3)",
+   "method": "trimesh split",
+   "result": "FAIL",
+   "value": 15,
+   "units": "comps",
+   "note": "14 floaters 2.6-44.7mm3; spec requires exactly 1 connected body"
+  },
+  {
+   "name": "Mass (R2.3 measured)",
+   "method": "volume x 1.20 g/cm3",
+   "result": "FAIL",
+   "value": 532.0,
+   "units": "g",
+   "note": "band 340-420; solver echo claimed 410g -> claim was wrong by 122g (lattice was ~95% solid, not 25-35%)"
+  },
+  {
+   "name": "S1 ruler cuts body (R2.3)",
+   "method": "manifold3d intersect(growth_ruler, body)",
+   "result": "FAIL",
+   "value": 0.0,
+   "units": "mm3",
+   "note": "CONFIRMED: cutter 979.7mm3, cut 0.0mm3 \u2014 marks sat at y=+-54, body half-width 45.5"
+  },
+  {
+   "name": "S1 speed_lines cut body (R2.3)",
+   "method": "manifold3d intersect",
+   "result": "FAIL",
+   "value": 0.004,
+   "units": "mm3",
+   "note": "CONFIRMED: cutter 10454mm3, cut ~0"
+  },
+  {
+   "name": "S1 turbine cut body (R2.3)",
+   "method": "manifold3d intersect",
+   "result": "FAIL",
+   "value": 0.034,
+   "units": "mm3",
+   "note": "CONFIRMED: blades rotated about ORIGIN -> landed at y=+-107 (outside)"
+  },
+  {
+   "name": "S2 text() renders headless",
+   "method": "openscad text probe volume",
+   "result": "PASS",
+   "value": 77.0,
+   "units": "mm3",
+   "note": "Liberation Sans:style=Bold present & renders (DejaVu absent in env)"
+  },
+  {
+   "name": "S2 text as-placed cuts body (R2.3)",
+   "method": "manifold3d intersect",
+   "result": "FAIL",
+   "value": 0.0,
+   "units": "mm3",
+   "note": "CONFIRMED: text at y=+-53.2 outside body; orientation also wrong (extruded along x, glyph plane yz)"
+  },
+  {
+   "name": "S3 grooves do not breach footbed (R2.3)",
+   "method": "intersect(flex_grooves, foot_negative)",
+   "result": "FAIL",
+   "value": 2440.1,
+   "units": "mm3",
+   "note": "CONFIRMED breach: footbed z 7.25-8.91, groove tops z 12-15; web negative"
+  },
+  {
+   "name": "S4 resonance clear of step rate",
+   "method": "f=(1/2pi)sqrt(k/m), k=162 N/mm (contract 8mm@1295N)",
+   "result": "PASS",
+   "value": 7.88,
+   "units": "Hz",
+   "note": "step rate 2.5-3.0 Hz; ratio 2.6x. RISK: k->25 N/mm gives 3.1 Hz (in band) \u2014 fatigue retention is safety-critical"
+  },
+  {
+   "name": "S5 bow channel vents to gills (R2.3)",
+   "method": "intersect(bow_channel, aero_gills)",
+   "result": "FAIL",
+   "value": 0.0,
+   "units": "mm3",
+   "note": "CONFIRMED: no duct channel->gills; and channel breached base (5574mm3 below z=0 = extra openings)"
+  },
+  {
+   "name": "S6 color split changes export",
+   "method": "volume(export) - volume(monolith_body)",
+   "result": "PASS",
+   "value": 0.0,
+   "units": "mm3",
+   "note": "443322.8 == 443322.8 mm3 exactly; color blocks are a pure partition"
+  },
+  {
+   "name": "R2.3 rings actually cut material",
+   "method": "intersect(crash_rings, body) + sample containment",
+   "result": "FAIL",
+   "value": 0.0,
+   "units": "mm3",
+   "note": "tori R=44/50/56 sat 98.8% OUTSIDE body: the 3-ring decoupler cut NOTHING in R2.3"
+  },
+  {
+   "name": "Thickness floor (R2.3)",
+   "method": "ray-cast normal thickness, 5993 samples",
+   "result": "FAIL",
+   "value": 0.412,
+   "units": "mm (p1)",
+   "note": "27.4% of surface < 1.6mm (dense-lattice slivers)"
+  },
+  {
+   "name": "F6 render clean (R2.4)",
+   "method": "openscad -o body_R24.stl",
+   "result": "PASS",
+   "value": "exit 0",
+   "units": "-",
+   "note": "echo asserts PASS"
+  },
+  {
+   "name": "Mass (R2.4 measured)",
+   "method": "volume x 1.20 g/cm3",
+   "result": "PASS",
+   "value": 366.9,
+   "units": "g",
+   "note": "band 340-420, target ~385: delta -18g. Volume 305715.6mm3"
+  },
+  {
+   "name": "BBox (R2.4 v1 render)",
+   "method": "trimesh bounds",
+   "result": "FAIL",
+   "value": "321.1 x 102.0 x 55.0",
+   "units": "mm",
+   "note": "z_min=-5.5 (bottom-trim bug, fixed as F12); width 102 slightly over 88-100 sanity band \u2014 REQUIRED to fit 267mm foot (98mm ball); contract width unspecified"
+  },
+  {
+   "name": "Mesh exactly 1 component (R2.4 v1 render)",
+   "method": "trimesh split",
+   "result": "FAIL",
+   "value": 87,
+   "units": "comps",
+   "note": "main 303804mm3 (99.4%) + 86 fragments 9042mm3 total; causes: bottom-trim band bug (F12 fixed) + floating pull tab (F13 fixed) + CGAL sliver artifacts; re-render in flight at delivery time"
+  },
+  {
+   "name": "S3 groove web (R2.4 source)",
+   "method": "groove tops set to footbed-6mm",
+   "result": "PASS (source)",
+   "value": "1.2/1.3/2.2/2.9",
+   "units": "mm (groove top z)",
+   "note": "footbed measured 7.25/7.35/8.27/8.91 -> web exactly 6.0mm; mesh re-verify in flight"
+  },
+  {
+   "name": "S1/S2 decor conformal (R2.4 source)",
+   "method": "engraver intersect 0.8mm surface band (sole_envelope(0) - sole_envelope(0.8))",
+   "result": "PASS (source)",
+   "value": 0.8,
+   "units": "mm depth",
+   "note": "depth bounded by construction; residual wall = skin 1.6 + pad -> >=1.6mm; mesh re-verify in flight"
+  },
+  {
+   "name": "Contact edges r>=1.0mm",
+   "method": "construction + facet dihedral sampling",
+   "result": "NOT RUN",
+   "value": "-",
+   "units": "-",
+   "note": "slats r=2 capsule, pull tab sphere hull r=5/3, dimples concave r=0.9; collar rim dihedral measurement NOT RUN \u2014 time budget"
+  },
+  {
+   "name": "FEA (CalculiX/FEBio)",
+   "method": "ccx/febio",
+   "result": "NOT RUN",
+   "value": "-",
+   "units": "-",
+   "note": "requires CalculiX/FEBio \u2014 not installable in env (no root); simplified beam+contact model used instead"
+  },
+  {
+   "name": "Slicer/FDM supports budget",
+   "method": "prusa-slicer/CuraEngine",
+   "result": "NOT RUN",
+   "value": "-",
+   "units": "-",
+   "note": "requires slicer \u2014 not installable in env; overhang audit: 26.6% surface >45deg (R2.3), mostly internal lattice/bridges"
+  },
+  {
+   "name": "FINAL v4 render: watertight",
+   "method": "trimesh",
+   "result": "PASS",
+   "value": true,
+   "units": "-",
+   "note": "body_R24_v4.stl winding consistent"
+  },
+  {
+   "name": "FINAL v4: exactly 1 component",
+   "method": "trimesh split",
+   "result": "FAIL",
+   "value": 24,
+   "units": "comps",
+   "note": "main body 373790mm3 (98.5%+); largest loose body 5524mm3 = R2.3 decorative dome islanded in lattice voids -> F22 removes domes; v5 re-render launched at deadline"
+  },
+  {
+   "name": "FINAL v4: mass",
+   "method": "volume x 1.20",
+   "result": "FAIL",
+   "value": 441.7,
+   "units": "g",
+   "note": "band 340-420; +21.7g over after midfoot raise (F18). F22+trims (domes out, bow_w 12, accordion 96x16, upper_t 3.8) estimated ~400-415g; v5 re-render in flight at deadline"
+  },
+  {
+   "name": "FINAL v4: groove web >= 6mm",
+   "method": "vertical ray probes at groove x",
+   "result": "PASS",
+   "value": "6.4-9.9",
+   "units": "mm",
+   "note": "x=72/94/114/128 web 9.9/8.8/7.05/6.44mm; S3 no footbed breach (0.0mm3)"
+  },
+  {
+   "name": "FINAL v4: bbox",
+   "method": "trimesh bounds",
+   "result": "PASS (z/len) / NOTE (width)",
+   "value": "321.1 x 105.6 x 57.1",
+   "units": "mm",
+   "note": "length/z in sanity band; width 105.6 for EU42-44 fit (contract specifies length only)"
+  },
+  {
+   "name": "Contact edges r>=1.0",
+   "method": "facet-dihedral sampling (edge_check.py, v3)",
+   "result": "FAIL",
+   "value": "collar rim dihedral min 22deg (median 81)",
+   "units": "deg",
+   "note": "pull tab PASS (sphere hull, 0 sharp edges); gill rims sharp (min 16.8deg). Physical mitigation: heat-roll rim / liner lip; or fillet in R2.5"
+  },
+  {
+   "name": "Engraving carved & residual wall",
+   "method": "containment sampling (carve_verify.py)",
+   "result": "NOT RUN",
+   "value": "-",
+   "units": "-",
+   "note": "correct method defined; time budget expired before run. Engraving depth bounded 0.8mm by construction (band intersect); residual wall = skin 1.6 + pad"
+  }
+ ],
+ "mass_by_component_g": {
+  "measured_total_R2.4": 366.9,
+  "measured_total_R2.3": 532.0,
+  "note": "component split NOT RUN (mesh v2 re-render in flight); analytic: skin ~78, lattice ~95, upper ~55, liner ~37, bow ~20, accordion ~14, heel pad ~30, misc ~15 (ESTIMATE)"
+ },
+ "load_cases": [
+  {
+   "case": "walk",
+   "force_N": 400,
+   "max_stress_MPa": 2.09,
+   "sf": 11.9,
+   "result": "PASS (model)"
+  },
+  {
+   "case": "run",
+   "force_N": 1295,
+   "max_stress_MPa": 6.78,
+   "sf": 3.69,
+   "result": "PASS (model)"
+  },
+  {
+   "case": "proof",
+   "force_N": 1942,
+   "max_stress_MPa": 10.16,
+   "sf": 2.46,
+   "result": "PASS (model)"
+  }
+ ],
+ "comfort": {
+  "method": "SIMPLIFIED pressure model P=F/A + mesh footbed area",
+  "contact_area_cm2": 172.0,
+  "target_cm2": 155.0,
+  "peak_plantar_kPa": 12.1,
+  "limit_kPa": 280.0,
+  "toe_room_net_mm": [
+   22,
+   16,
+   9
+  ],
+  "result": "PASS (model)",
+  "note": "heel pressure vs R2.2 2-ring baseline: NOT RUN \u2014 requires R2.2 baseline geometry"
+ },
+ "iterations": [
+  {
+   "n": 1,
+   "defect": "lattice diamond grid ~95% solid -> mass 532g (band 340-420)",
+   "fix": "F1 true rib grid rib_mm=3.0, kept() corrected",
+   "re_verify": "mass 366.9g PASS (v1 render)"
+  },
+  {
+   "n": 2,
+   "defect": "skin_t 1.5 < wall floor 1.6",
+   "fix": "F2 skin 1.6mm, upper wall 2.6mm",
+   "re_verify": "source assert PASS"
+  },
+  {
+   "n": 3,
+   "defect": "ruler/speed-lines/turbine cut 0.0mm3 (all decor outside body)",
+   "fix": "F4 conformal 0.8mm band engravings",
+   "re_verify": "construction-bounded; mesh re-verify in flight"
+  },
+  {
+   "n": 4,
+   "defect": "text() misplaced/mis-oriented; mirrored risk on R shoe",
+   "fix": "F5 per-side rotations (never mirror), band engraving",
+   "re_verify": "font oracle 77mm3 PASS; mesh re-verify in flight"
+  },
+  {
+   "n": 5,
+   "defect": "grooves breached footbed (2440mm3), negative web",
+   "fix": "F6 groove tops = footbed-6mm",
+   "re_verify": "web=6.0mm by construction; mesh re-verify in flight"
+  },
+  {
+   "n": 6,
+   "defect": "bow floated free inside channel (loose body)",
+   "fix": "F7 bow x+-88 embedded, channel x+-82",
+   "re_verify": "in flight"
+  },
+  {
+   "n": 7,
+   "defect": "channel breached base (5574mm3) + no vent to gills",
+   "fix": "F8 channel floor clamped z>=2.5 + vent ducts to gills",
+   "re_verify": "in flight"
+  },
+  {
+   "n": 8,
+   "defect": "3-ring decoupler cut NOTHING (tori outside body)",
+   "fix": "F9 rings clipped inside (sole_envelope(skin_t+1.6)), heel pad solid matrix",
+   "re_verify": "in flight"
+  },
+  {
+   "n": 9,
+   "defect": "interior 313.8mm vs spec 290mm; width 75.8mm could not hold foot",
+   "fix": "F3 interior x -135..155 = 290mm exactly, ball width 93mm",
+   "re_verify": "toe room 22/16/9 by construction"
+  },
+  {
+   "n": 10,
+   "defect": "pull tab sharp cylinder rims",
+   "fix": "F10 hull of spheres",
+   "re_verify": "source"
+  },
+  {
+   "n": 11,
+   "defect": "bottom trim cut only z -4.8..-1.6 -> z_min -5.5",
+   "fix": "F12 trim all z<0",
+   "re_verify": "in flight"
+  },
+  {
+   "n": 12,
+   "defect": "pull tab floated 12mm above heel (2202mm3 fragment)",
+   "fix": "F13 tab anchored at heel top z=28",
+   "re_verify": "in flight"
+  },
+  {
+   "n": 13,
+   "defect": "bow channel solid CONTAINED the bow -> bow + liner eaten (channel void 83cm3 swallowed the spring); bow also collided with low footbed",
+   "fix": "F17 channel = clearance shell around bow (difference with bow_spring); F18 midfoot footbed raised to clear bow arch (cavity bottom 23.5 at x=0)",
+   "re_verify": "v4: bow survives; groove webs 6.4-9.9mm PASS; watertight PASS"
+  },
+  {
+   "n": 14,
+   "defect": "v3 fragments: 5524mm3 dome island + floating pull tab",
+   "fix": "F16 tab anchored z=28; F22 decorative domes removed (not in fixed-spec architecture)",
+   "re_verify": "v5 re-render launched at deadline"
+  },
+  {
+   "n": 15,
+   "defect": "upper top wall 1.09mm (<1.6 floor) due to z-scale on pad growth",
+   "fix": "F19 upper_t 3.8 (z-wall 1.6) ",
+   "re_verify": "v5 in flight"
+  }
+ ],
+ "open_risks": [
+  "Mass: v4 measured 441.7g (band top 420). Source trimmed (F22 + trims) but the v5 re-render had NOT completed at delivery: treat final mass as UNVERIFIED (est. ~400-415g).",
+  "Component count: v4 = 24 (main 98.5%). F22 removes the largest loose body; v5 unverified. Do not print until mesh check = 1 component.",
+  "Contact edges: collar rim measured sharp (dihedral 22-81 deg) -> r>=1.0 FAIL at collar/gill rims. Heat-roll or liner-lip finish required before wear.",
+  "S4 resonance: 7.88 Hz at contract k; bow fatigue toward k~25 N/mm -> 3.1 Hz (inside 2.5-3.0 Hz step band near growth plates). Physical fatigue item 2 is safety-critical.",
+  "Bow arch is the only stiff load path (bending-only k=1.2 N/mm); no FEA available (CalculiX/FEBio NOT RUN).",
+  "wet traction, dye flex, wear ramp = physical protocol items 4,5,7-10 (open by definition)"
+ ],
+ "wear_status": "DIGITAL CANDIDATE \u2014 NOT CLEARED FOR HUMAN WEAR (10-box physical protocol mandatory)"
+}

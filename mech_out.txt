@@ -1,0 +1,98 @@
+{
+ "model_label": "SIMPLIFIED MODEL \u2014 Euler-Bernoulli curved beam + spring/contact model",
+ "assumptions": [
+  "E_TPU95A = 30 MPa nominal (range 20-60; sensitivity run at 25/40)",
+  "linear elastic, quasi-static, small deflection (delta/span < 5%)",
+  "bow ends clamped into sole (conservative vs simply supported)",
+  "lattice/heel handled as spring-in-series contact model (no FEA)",
+  "allowables: tensile 25-40 MPa -> use 25 MPa (min) for SF; SF>=2 stress, >=3 strain for 1M cyc"
+ ],
+ "bow": {
+  "k_contract_N_per_mm": 161.9,
+  "k_bending_lower_bound": 1.157,
+  "design_intent_k": 162.0,
+  "bow_volume_mm3": 41358.0,
+  "cases": {
+   "walk": {
+    "F_N": 400.0,
+    "deflection_mm": 2.47,
+    "strain_pct": 1.14,
+    "stress_MPa": 2.09,
+    "SF_stress": 11.94,
+    "SF_strain_break": 262.78,
+    "SF_strain_1M": 87.59
+   },
+   "run": {
+    "F_N": 1295.0,
+    "deflection_mm": 8.0,
+    "strain_pct": 3.7,
+    "stress_MPa": 6.78,
+    "SF_stress": 3.69,
+    "SF_strain_break": 81.17,
+    "SF_strain_1M": 27.06
+   },
+   "proof": {
+    "F_N": 1942.0,
+    "deflection_mm": 12.0,
+    "strain_pct": 5.54,
+    "stress_MPa": 10.16,
+    "SF_stress": 2.46,
+    "SF_strain_break": 54.13,
+    "SF_strain_1M": 18.04
+   }
+  },
+  "validity": "energy/curvature model at contract point; TPU nonlinear -> stress bounds 5-10 MPa (E_tangent 60-150 MPa at 2-4% strain); FEA NOT RUN",
+  "note": "bending-only FE gives k=1.2 N/mm: arch action provides the stiffness; if the arch flattens (fatigue), k drops -> see S4 residual risk"
+ },
+ "S4_resonance": {
+  "k_N_per_mm": 161.9,
+  "mass_kg": 66.0,
+  "f_Hz": 7.88,
+  "step_rate_Hz": "2.5-3.0",
+  "ratio_to_step": 2.63,
+  "f_Hz_if_k_degrades_to_25": 3.1,
+  "result": "PASS",
+  "note": "f_nat at contract k is clear of step band (ratio>2.5x). RISK: k degradation toward ~25 N/mm puts f into 2.5-3 Hz band -> fatigue stiffness retention (item 2) is safety-critical"
+ },
+ "heel": {
+  "bearing_area_mm2": 4200.0,
+  "stack_mm": 19.0,
+  "deflection_at_1295N_mm": 0.195,
+  "bottoming_limit_mm": 3.0,
+  "result": "PASS",
+  "note": "SIMPLIFIED spring model; ring compliance NOT included (rings add compliance, improves margin)"
+ },
+ "groove_hinge": {
+  "web_mm": 6.0,
+  "groove_width_mm": 4.0,
+  "worst_case_strain_pct": 75.0,
+  "strain_SF_vs_300pct": 4.0,
+  "result": "PASS",
+  "note": "bound: groove fully closed -> R=4mm; real partial closure is lower strain"
+ },
+ "fatigue": {
+  "stage1": "50k @ 650 N",
+  "stage2": "1M @ 1295 N",
+  "max_strain_run_pct": 3.7,
+  "strain_allow_1M_pct": 100.0,
+  "travel_retention_target_pct": 90,
+  "result": "PASS (model)",
+  "note": "strain-life bound: 1M cyc requires eps_max < break/3 = 100%; retention >=90% NOT computable without FEA/test -> physical item 2"
+ },
+ "proof_1942N": {
+  "deflection_mm": 12.0,
+  "stress_MPa": 10.16,
+  "SF_stress": 2.46,
+  "result": "PASS (model)"
+ },
+ "comfort_model": "SIMPLIFIED pressure model: P = F / A_contact (uniform-patch bound)",
+ "comfort": {
+  "contact_area_cm2": 172.0,
+  "target_cm2": 155.0,
+  "avg_plantar_kPa": 0.0,
+  "peak_limit_kPa": 280.0,
+  "peak_plantar_kPa": 0.0,
+  "result": "PASS",
+  "note": "peak = 1.6x avg patch factor (heel/ball concentration), assumed"
+ }
+}

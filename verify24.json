@@ -1,0 +1,99 @@
+{
+ "volume_mm3": 295690.0,
+ "mass_g": 354.8,
+ "watertight": false,
+ "components": 85,
+ "comp_vols_top": [
+  293972.6,
+  2356.5,
+  2356.5,
+  2202.1,
+  436.7,
+  263.4
+ ],
+ "bbox": [
+  [
+   -154.07,
+   -51.05,
+   0.0
+  ],
+  [
+   167.03,
+   51.05,
+   49.47
+  ]
+ ],
+ "S1_ruler": {
+  "cutter_mm3": 242.7,
+  "cut_mm3": NaN
+ },
+ "S1_speedlines": {
+  "cutter_mm3": 391.4,
+  "cut_mm3": NaN
+ },
+ "S1_turbine": {
+  "cutter_mm3": 0.0,
+  "cut_mm3": NaN
+ },
+ "rings": {
+  "cutter_mm3": 237.1,
+  "cut_mm3": NaN
+ },
+ "gills": {
+  "cutter_mm3": 14976.0,
+  "cut_mm3": NaN
+ },
+ "channel": {
+  "cutter_mm3": 83752.4,
+  "cut_mm3": NaN
+ },
+ "grooves": {
+  "cutter_mm3": 27808.0,
+  "cut_mm3": NaN
+ },
+ "S3_groove_x_footcavity_mm3": 0.0,
+ "groove_web": {
+  "72": {
+   "footbed_z": 7.25,
+   "body_hits_z": [
+    38.4,
+    37.98,
+    2.5,
+    1.2
+   ]
+  },
+  "94": {
+   "footbed_z": 7.44,
+   "body_hits_z": [
+    36.73,
+    36.3,
+    7.44,
+    6.35
+   ]
+  },
+  "114": {
+   "footbed_z": 8.53,
+   "body_hits_z": [
+    41.71,
+    38.15,
+    34.57,
+    34.15,
+    8.53,
+    7.47
+   ]
+  },
+  "128": {
+   "footbed_z": 9.34,
+   "body_hits_z": [
+    33.06,
+    32.65,
+    9.34,
+    8.27
+   ]
+  }
+ },
+ "thickness_min": 0.05,
+ "thickness_p5": 0.45,
+ "thickness_median": 1.6,
+ "thickness_frac_lt_1p6": 0.478
+}
